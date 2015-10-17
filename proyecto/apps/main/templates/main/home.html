@@ -10,64 +10,20 @@
 
 			<div class="libros">
 
-				<article class="libro">
+				{% for movie in movies %}
+					<article class="libro">
+						
+						<img src="{{ MEDIA_URL }}{{ movie.image }}" alt="" class="libro__img">
+						<div class="libro__sombra">
 
-					<img src="/static/img/jurassic.jpg" alt="" class="libro__img">
-					<div class="libro__sombra">
+							<h3 class="libro__titulo"><a href="{% url 'movies:movie_detail' movie.slug %}">{{ movie.name }}</a></h3>
+							<span class="libro__autor">Acción</span>
 
-						<h3 class="libro__titulo">Jurassic World</h3>
-						<span class="libro__autor">Acción</span>
+						</div>
 
-					</div>
+					</article>
+				{% endfor %}
 
-				</article>
-
-				<article class="libro">
-
-					<img src="/static/img/jurassic.jpg" alt="" class="libro__img">
-					<div class="libro__sombra">
-
-						<h3 class="libro__titulo">Jurassic World</h3>
-						<span class="libro__autor">Acción</span>
-
-					</div>
-
-				</article>
-
-				<article class="libro">
-
-					<img src="/static/img/jurassic.jpg" alt="" class="libro__img">
-					<div class="libro__sombra">
-
-						<h3 class="libro__titulo">Jurassic World</h3>
-						<span class="libro__autor">Acción</span>
-
-					</div>
-
-				</article>
-
-				<article class="libro">
-
-					<img src="/static/img/jurassic.jpg" alt="" class="libro__img">
-					<div class="libro__sombra">
-
-						<h3 class="libro__titulo">Jurassic World</h3>
-						<span class="libro__autor">Acción</span>
-
-					</div>
-
-				</article>
-
-				<article class="libro">
-
-					<img src="/static/img/jurassic.jpg" alt="" class="libro__img">
-					<div class="libro__sombra">
-
-						<h3 class="libro__titulo">Jurassic World</h3>
-						<span class="libro__autor">Acción</span>
-
-					</div>
-				</article>
 			</div>
 		</div>
 	</section>
